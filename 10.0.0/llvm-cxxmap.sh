@@ -19,8 +19,8 @@ f=
 set -e
 if [[ -n $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/llvm-cxxmap) ]]; then
   $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/llvm-cxxmap) "$@"
-elif [[ -n $(rlocation clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/llvm-cxxmap) ]]; then
-  $(rlocation clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/llvm-cxxmap) "$@"
+elif [[ -n $(rlocation clang-llvm-10.0.0-aarch64-linux-gnu/bin/llvm-cxxmap) ]]; then
+  $(rlocation clang-llvm-10.0.0-aarch64-linux-gnu/bin/llvm-cxxmap) "$@"
 else
   echo "clang not found!" >&2
   exit 1

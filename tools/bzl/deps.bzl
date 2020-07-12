@@ -8,6 +8,20 @@ def llvm_deps():
     load("@llvm//tools/bzl:deps.bzl", "llvm_deps")
     llvm_deps()
   """
+
+  # todo?@sunxy
+  # sed -i s/clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/clang-llvm-10.0.0-aarch64-linux-gnu/g `grep -rl "clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04" ./`
+  #
+  http_archive(
+    name="clang-llvm-10.0.0-aarch64-linux-gnu",
+    build_file="@llvm//:llvm_linux.BUILD",
+    sha256="c2072390dc6c8b4cc67737f487ef384148253a6a97b38030e012c4d7214b7295",
+    strip_prefix="clang+llvm-10.0.0-aarch64-linux-gnu",
+    urls=[
+      "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-aarch64-linux-gnu.tar.xz"
+    ],
+  )
+
   http_archive(
     name="clang-llvm-10.0.0-x86_64-apple-darwin",
     build_file="@llvm//:llvm_macos.BUILD",

@@ -19,8 +19,8 @@ f=
 set -e
 if [[ -n $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/sancov) ]]; then
   $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/sancov) "$@"
-elif [[ -n $(rlocation clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/sancov) ]]; then
-  $(rlocation clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/sancov) "$@"
+elif [[ -n $(rlocation clang-llvm-10.0.0-aarch64-linux-gnu/bin/sancov) ]]; then
+  $(rlocation clang-llvm-10.0.0-aarch64-linux-gnu/bin/sancov) "$@"
 else
   echo "clang not found!" >&2
   exit 1

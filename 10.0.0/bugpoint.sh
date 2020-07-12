@@ -19,8 +19,8 @@ f=
 set -e
 if [[ -n $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/bugpoint) ]]; then
   $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/bugpoint) "$@"
-elif [[ -n $(rlocation clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/bugpoint) ]]; then
-  $(rlocation clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/bugpoint) "$@"
+elif [[ -n $(rlocation clang-llvm-10.0.0-aarch64-linux-gnu/bin/bugpoint) ]]; then
+  $(rlocation clang-llvm-10.0.0-aarch64-linux-gnu/bin/bugpoint) "$@"
 else
   echo "clang not found!" >&2
   exit 1

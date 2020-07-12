@@ -19,8 +19,8 @@ f=
 set -e
 if [[ -n $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/clang-offload-wrapper) ]]; then
   $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/clang-offload-wrapper) "$@"
-elif [[ -n $(rlocation clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/clang-offload-wrapper) ]]; then
-  $(rlocation clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin/clang-offload-wrapper) "$@"
+elif [[ -n $(rlocation clang-llvm-10.0.0-aarch64-linux-gnu/bin/clang-offload-wrapper) ]]; then
+  $(rlocation clang-llvm-10.0.0-aarch64-linux-gnu/bin/clang-offload-wrapper) "$@"
 else
   echo "clang not found!" >&2
   exit 1
