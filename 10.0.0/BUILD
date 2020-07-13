@@ -475,9 +475,11 @@ cc_library(
         "//conditions:default": [
             "-lrt",
             "-ldl",
-            "-ltinfo",
+            #"-ltinfo",
             "-lpthread",
             "-lm",
+            "-lz",
+            "-lncurses"
         ],
     }) + [
         # clang libs

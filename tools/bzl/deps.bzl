@@ -27,7 +27,7 @@ def llvm_deps():
   # for centos, sles, fedora, red hat
   http_archive(
     name="clang-llvm-10.0.0-x86_64-linux-rpm",
-    build_file="@llvm//:llvm_linux.BUILD",
+    build_file="@llvm//:llvm_rpm.BUILD",
     sha256="a7a3c2a7aff813bb10932636a6f1612e308256a5e6b5a5655068d5c5b7f80e86",
     strip_prefix="clang+llvm-10.0.0-x86_64-linux-sles11.3", 
     urls=[
