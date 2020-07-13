@@ -437,7 +437,7 @@ licenses(["notice"])
 #     name = "all_files",
 #     srcs = select({
 #         "//:darwin": ["@clang-llvm-10.0.0-x86_64-apple-darwin//:all_files"],
-#         "//conditions:default": ["@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:all_files"],
+#         "//conditions:default": ["@clang-llvm-10.0.0-conda-centos-x86_64//:all_files"],
 #     }),
 # )
 
@@ -449,7 +449,7 @@ cc_library(
     data = select({
         "//:darwin": ["@clang-llvm-10.0.0-x86_64-apple-darwin//:libdir"],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:libdir",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:libdir",
         ],
     }),
     linkopts = select({
@@ -461,8 +461,8 @@ cc_library(
             "-Wl,-headerpad_max_install_names",
         ],
         "//conditions:default": [
-            "-Wl,-rpath,$(location @clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:libdir)/",
-            "-L$(location @clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:libdir)/",
+            "-Wl,-rpath,$(location @clang-llvm-10.0.0-conda-centos-x86_64//:libdir)/",
+            "-L$(location @clang-llvm-10.0.0-conda-centos-x86_64//:libdir)/",
         ],
     }) + select({
         # llvm-config --system-libs
@@ -654,9 +654,9 @@ cc_library(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:libs",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:headers",
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:static_libs",
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:LLVMPolly",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:headers",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:static_libs",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:LLVMPolly",
         ],
     }),
 )
@@ -671,7 +671,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:bugpoint",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:bugpoint",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:bugpoint",
         ],
     }),
     deps = [
@@ -687,7 +687,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:c-index-test",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:c-index-test",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:c-index-test",
         ],
     }),
     deps = [
@@ -703,7 +703,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang",
         ],
     }),
     deps = [
@@ -719,7 +719,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang++",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang++",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang++",
         ],
     }),
     deps = [
@@ -735,7 +735,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-10",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-10",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-10",
         ],
     }),
     deps = [
@@ -751,7 +751,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-apply-replacements",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-apply-replacements",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-apply-replacements",
         ],
     }),
     deps = [
@@ -767,7 +767,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-change-namespace",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-change-namespace",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-change-namespace",
         ],
     }),
     deps = [
@@ -783,7 +783,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-check",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-check",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-check",
         ],
     }),
     deps = [
@@ -799,7 +799,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-cl",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-cl",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-cl",
         ],
     }),
     deps = [
@@ -815,7 +815,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-cpp",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-cpp",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-cpp",
         ],
     }),
     deps = [
@@ -831,7 +831,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-doc",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-doc",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-doc",
         ],
     }),
     deps = [
@@ -847,7 +847,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-extdef-mapping",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-extdef-mapping",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-extdef-mapping",
         ],
     }),
     deps = [
@@ -863,7 +863,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-format",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-format",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-format",
         ],
     }),
     deps = [
@@ -879,7 +879,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-import-test",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-import-test",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-import-test",
         ],
     }),
     deps = [
@@ -895,7 +895,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-include-fixer",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-include-fixer",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-include-fixer",
         ],
     }),
     deps = [
@@ -911,7 +911,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-move",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-move",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-move",
         ],
     }),
     deps = [
@@ -927,7 +927,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-offload-bundler",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-offload-bundler",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-offload-bundler",
         ],
     }),
     deps = [
@@ -943,7 +943,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-offload-wrapper",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-offload-wrapper",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-offload-wrapper",
         ],
     }),
     deps = [
@@ -959,7 +959,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-query",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-query",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-query",
         ],
     }),
     deps = [
@@ -975,7 +975,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-refactor",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-refactor",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-refactor",
         ],
     }),
     deps = [
@@ -991,7 +991,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-rename",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-rename",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-rename",
         ],
     }),
     deps = [
@@ -1007,7 +1007,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-reorder-fields",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-reorder-fields",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-reorder-fields",
         ],
     }),
     deps = [
@@ -1023,7 +1023,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-scan-deps",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-scan-deps",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-scan-deps",
         ],
     }),
     deps = [
@@ -1039,7 +1039,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clang-tidy",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clang-tidy",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clang-tidy",
         ],
     }),
     deps = [
@@ -1055,7 +1055,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:clangd",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:clangd",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:clangd",
         ],
     }),
     deps = [
@@ -1071,7 +1071,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:diagtool",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:diagtool",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:diagtool",
         ],
     }),
     deps = [
@@ -1087,7 +1087,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:dsymutil",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:dsymutil",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:dsymutil",
         ],
     }),
     deps = [
@@ -1103,7 +1103,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:find-all-symbols",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:find-all-symbols",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:find-all-symbols",
         ],
     }),
     deps = [
@@ -1119,7 +1119,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:git-clang-format",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:git-clang-format",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:git-clang-format",
         ],
     }),
     deps = [
@@ -1135,7 +1135,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:hmaptool",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:hmaptool",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:hmaptool",
         ],
     }),
     deps = [
@@ -1151,7 +1151,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:ld.lld",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:ld.lld",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:ld.lld",
         ],
     }),
     deps = [
@@ -1167,7 +1167,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:ld64.lld",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:ld64.lld",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:ld64.lld",
         ],
     }),
     deps = [
@@ -1183,7 +1183,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llc",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llc",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llc",
         ],
     }),
     deps = [
@@ -1199,7 +1199,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:lld",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:lld",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:lld",
         ],
     }),
     deps = [
@@ -1215,7 +1215,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:lld-link",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:lld-link",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:lld-link",
         ],
     }),
     deps = [
@@ -1231,7 +1231,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:lli",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:lli",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:lli",
         ],
     }),
     deps = [
@@ -1247,7 +1247,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-addr2line",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-addr2line",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-addr2line",
         ],
     }),
     deps = [
@@ -1263,7 +1263,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-ar",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-ar",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-ar",
         ],
     }),
     deps = [
@@ -1279,7 +1279,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-as",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-as",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-as",
         ],
     }),
     deps = [
@@ -1295,7 +1295,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-bcanalyzer",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-bcanalyzer",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-bcanalyzer",
         ],
     }),
     deps = [
@@ -1311,7 +1311,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-c-test",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-c-test",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-c-test",
         ],
     }),
     deps = [
@@ -1327,7 +1327,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-cat",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-cat",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-cat",
         ],
     }),
     deps = [
@@ -1343,7 +1343,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-cfi-verify",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-cfi-verify",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-cfi-verify",
         ],
     }),
     deps = [
@@ -1359,7 +1359,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-config",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-config",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-config",
         ],
     }),
     deps = [
@@ -1375,7 +1375,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-cov",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-cov",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-cov",
         ],
     }),
     deps = [
@@ -1391,7 +1391,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-cvtres",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-cvtres",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-cvtres",
         ],
     }),
     deps = [
@@ -1407,7 +1407,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-cxxdump",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-cxxdump",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-cxxdump",
         ],
     }),
     deps = [
@@ -1423,7 +1423,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-cxxfilt",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-cxxfilt",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-cxxfilt",
         ],
     }),
     deps = [
@@ -1439,7 +1439,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-cxxmap",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-cxxmap",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-cxxmap",
         ],
     }),
     deps = [
@@ -1455,7 +1455,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-diff",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-diff",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-diff",
         ],
     }),
     deps = [
@@ -1471,7 +1471,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-dis",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-dis",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-dis",
         ],
     }),
     deps = [
@@ -1487,7 +1487,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-dlltool",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-dlltool",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-dlltool",
         ],
     }),
     deps = [
@@ -1503,7 +1503,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-dwarfdump",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-dwarfdump",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-dwarfdump",
         ],
     }),
     deps = [
@@ -1519,7 +1519,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-dwp",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-dwp",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-dwp",
         ],
     }),
     deps = [
@@ -1535,7 +1535,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-elfabi",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-elfabi",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-elfabi",
         ],
     }),
     deps = [
@@ -1551,7 +1551,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-exegesis",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-exegesis",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-exegesis",
         ],
     }),
     deps = [
@@ -1567,7 +1567,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-extract",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-extract",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-extract",
         ],
     }),
     deps = [
@@ -1583,7 +1583,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-ifs",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-ifs",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-ifs",
         ],
     }),
     deps = [
@@ -1599,7 +1599,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-install-name-tool",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-install-name-tool",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-install-name-tool",
         ],
     }),
     deps = [
@@ -1615,7 +1615,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-jitlink",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-jitlink",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-jitlink",
         ],
     }),
     deps = [
@@ -1631,7 +1631,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-lib",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-lib",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-lib",
         ],
     }),
     deps = [
@@ -1647,7 +1647,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-link",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-link",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-link",
         ],
     }),
     deps = [
@@ -1663,7 +1663,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-lipo",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-lipo",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-lipo",
         ],
     }),
     deps = [
@@ -1679,7 +1679,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-lto",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-lto",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-lto",
         ],
     }),
     deps = [
@@ -1695,7 +1695,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-lto2",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-lto2",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-lto2",
         ],
     }),
     deps = [
@@ -1711,7 +1711,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-mc",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-mc",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-mc",
         ],
     }),
     deps = [
@@ -1727,7 +1727,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-mca",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-mca",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-mca",
         ],
     }),
     deps = [
@@ -1743,7 +1743,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-modextract",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-modextract",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-modextract",
         ],
     }),
     deps = [
@@ -1759,7 +1759,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-mt",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-mt",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-mt",
         ],
     }),
     deps = [
@@ -1775,7 +1775,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-nm",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-nm",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-nm",
         ],
     }),
     deps = [
@@ -1791,7 +1791,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-objcopy",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-objcopy",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-objcopy",
         ],
     }),
     deps = [
@@ -1807,7 +1807,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-objdump",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-objdump",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-objdump",
         ],
     }),
     deps = [
@@ -1823,7 +1823,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-opt-report",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-opt-report",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-opt-report",
         ],
     }),
     deps = [
@@ -1839,7 +1839,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-pdbutil",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-pdbutil",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-pdbutil",
         ],
     }),
     deps = [
@@ -1855,7 +1855,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-profdata",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-profdata",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-profdata",
         ],
     }),
     deps = [
@@ -1871,7 +1871,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-ranlib",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-ranlib",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-ranlib",
         ],
     }),
     deps = [
@@ -1887,7 +1887,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-rc",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-rc",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-rc",
         ],
     }),
     deps = [
@@ -1903,7 +1903,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-readelf",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-readelf",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-readelf",
         ],
     }),
     deps = [
@@ -1919,7 +1919,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-readobj",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-readobj",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-readobj",
         ],
     }),
     deps = [
@@ -1935,7 +1935,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-reduce",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-reduce",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-reduce",
         ],
     }),
     deps = [
@@ -1951,7 +1951,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-rtdyld",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-rtdyld",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-rtdyld",
         ],
     }),
     deps = [
@@ -1967,7 +1967,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-size",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-size",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-size",
         ],
     }),
     deps = [
@@ -1983,7 +1983,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-split",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-split",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-split",
         ],
     }),
     deps = [
@@ -1999,7 +1999,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-stress",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-stress",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-stress",
         ],
     }),
     deps = [
@@ -2015,7 +2015,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-strings",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-strings",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-strings",
         ],
     }),
     deps = [
@@ -2031,7 +2031,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-strip",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-strip",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-strip",
         ],
     }),
     deps = [
@@ -2047,7 +2047,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-symbolizer",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-symbolizer",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-symbolizer",
         ],
     }),
     deps = [
@@ -2063,7 +2063,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-tblgen",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-tblgen",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-tblgen",
         ],
     }),
     deps = [
@@ -2079,7 +2079,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-undname",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-undname",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-undname",
         ],
     }),
     deps = [
@@ -2095,7 +2095,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:llvm-xray",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:llvm-xray",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:llvm-xray",
         ],
     }),
     deps = [
@@ -2111,7 +2111,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:modularize",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:modularize",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:modularize",
         ],
     }),
     deps = [
@@ -2127,7 +2127,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:obj2yaml",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:obj2yaml",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:obj2yaml",
         ],
     }),
     deps = [
@@ -2143,7 +2143,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:opt",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:opt",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:opt",
         ],
     }),
     deps = [
@@ -2159,7 +2159,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:pp-trace",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:pp-trace",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:pp-trace",
         ],
     }),
     deps = [
@@ -2175,7 +2175,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:sancov",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:sancov",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:sancov",
         ],
     }),
     deps = [
@@ -2191,7 +2191,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:sanstats",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:sanstats",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:sanstats",
         ],
     }),
     deps = [
@@ -2207,7 +2207,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:scan-build",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:scan-build",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:scan-build",
         ],
     }),
     deps = [
@@ -2223,7 +2223,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:scan-view",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:scan-view",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:scan-view",
         ],
     }),
     deps = [
@@ -2239,7 +2239,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:verify-uselistorder",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:verify-uselistorder",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:verify-uselistorder",
         ],
     }),
     deps = [
@@ -2255,7 +2255,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:wasm-ld",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:wasm-ld",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:wasm-ld",
         ],
     }),
     deps = [
@@ -2271,7 +2271,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:yaml2obj",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu//:yaml2obj",
+            "@clang-llvm-10.0.0-conda-centos-x86_64//:yaml2obj",
         ],
     }),
     deps = [

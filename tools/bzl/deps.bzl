@@ -9,8 +9,10 @@ def llvm_deps():
     llvm_deps()
   """
 
-  # todo?@sunxy
+  # todo
   # sed -i s/clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu/g `grep -rl "clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04" ./`
+  #
+  # clang+llvm-10.0.1-rc1-x86_64-pc-linux-gnu is also for ubuntu?
   #
   http_archive(
     name="clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu",
@@ -19,6 +21,18 @@ def llvm_deps():
     strip_prefix="clang+llvm-10.0.1-rc1-x86_64-pc-linux-gnu", 
     urls=[
       "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1-rc1/clang+llvm-10.0.1-rc1-x86_64-pc-linux-gnu.tar.xz"
+    ],
+  )
+
+  #
+  # try conda-contos-x86_64 compressed by myself
+  http_archive(
+    name="clang-llvm-10.0.0-conda-centos-x86_64",
+    build_file="@llvm//:llvm_linux.BUILD",
+    sha256="77bf34be4fbe639740525b19bf41c936e5c624be1fd6fbddcf46094c2648e4f4",
+    strip_prefix="clang-llvm-10.0.0-conda-centos-x86_64", 
+    urls=[
+        "https://github.com/xshaun/compiler-bazel-llvm/releases/download/v0.2-alpha/clang-llvm-10.0.0-conda-centos-x86_64.tar.xz"
     ],
   )
 

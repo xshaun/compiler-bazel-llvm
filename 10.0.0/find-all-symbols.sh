@@ -19,8 +19,8 @@ f=
 set -e
 if [[ -n $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/find-all-symbols) ]]; then
   $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/find-all-symbols) "$@"
-elif [[ -n $(rlocation clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu/bin/find-all-symbols) ]]; then
-  $(rlocation clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu/bin/find-all-symbols) "$@"
+elif [[ -n $(rlocation clang-llvm-10.0.0-conda-centos-x86_64/bin/find-all-symbols) ]]; then
+  $(rlocation clang-llvm-10.0.0-conda-centos-x86_64/bin/find-all-symbols) "$@"
 else
   echo "clang not found!" >&2
   exit 1
