@@ -19,8 +19,8 @@ f=
 set -e
 if [[ -n $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/llvm-dlltool) ]]; then
   $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/llvm-dlltool) "$@"
-elif [[ -n $(rlocation clang-llvm-10.0.0-aarch64-linux-gnu/bin/llvm-dlltool) ]]; then
-  $(rlocation clang-llvm-10.0.0-aarch64-linux-gnu/bin/llvm-dlltool) "$@"
+elif [[ -n $(rlocation clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu/bin/llvm-dlltool) ]]; then
+  $(rlocation clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu/bin/llvm-dlltool) "$@"
 else
   echo "clang not found!" >&2
   exit 1

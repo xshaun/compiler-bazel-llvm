@@ -10,15 +10,15 @@ def llvm_deps():
   """
 
   # todo?@sunxy
-  # sed -i s/clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/clang-llvm-10.0.0-aarch64-linux-gnu/g `grep -rl "clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04" ./`
+  # sed -i s/clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu/g `grep -rl "clang-llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04" ./`
   #
   http_archive(
-    name="clang-llvm-10.0.0-aarch64-linux-gnu",
+    name="clang-llvm-10.0.1-rc1-x86_64-pc-linux-gnu",
     build_file="@llvm//:llvm_linux.BUILD",
-    sha256="c2072390dc6c8b4cc67737f487ef384148253a6a97b38030e012c4d7214b7295",
-    strip_prefix="clang+llvm-10.0.0-aarch64-linux-gnu",
+    sha256="5145c89d788b1180d532101e6142b8c78424b6431e9376c41b02ebec776a8335",
+    strip_prefix="clang+llvm-10.0.1-rc1-x86_64-pc-linux-gnu", 
     urls=[
-      "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-aarch64-linux-gnu.tar.xz"
+      "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.1-rc1/clang+llvm-10.0.1-rc1-x86_64-pc-linux-gnu.tar.xz"
     ],
   )
 
