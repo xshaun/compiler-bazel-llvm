@@ -51,7 +51,7 @@ sh_binary(
             "@clang-llvm-10.0.0-x86_64-apple-darwin//:$binary",
         ],
         "//conditions:default": [
-            "@clang-llvm-10.0.0-conda-centos-x86_64//:$binary",
+            "@clang-llvm-10.0.0-x86_64-linux-rpm//:$binary",
         ],
     }),
     deps = [

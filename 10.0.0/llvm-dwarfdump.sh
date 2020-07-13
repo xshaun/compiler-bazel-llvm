@@ -19,8 +19,8 @@ f=
 set -e
 if [[ -n $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/llvm-dwarfdump) ]]; then
   $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/llvm-dwarfdump) "$@"
-elif [[ -n $(rlocation clang-llvm-10.0.0-conda-centos-x86_64/bin/llvm-dwarfdump) ]]; then
-  $(rlocation clang-llvm-10.0.0-conda-centos-x86_64/bin/llvm-dwarfdump) "$@"
+elif [[ -n $(rlocation clang-llvm-10.0.0-x86_64-linux-rpm/bin/llvm-dwarfdump) ]]; then
+  $(rlocation clang-llvm-10.0.0-x86_64-linux-rpm/bin/llvm-dwarfdump) "$@"
 else
   echo "clang not found!" >&2
   exit 1

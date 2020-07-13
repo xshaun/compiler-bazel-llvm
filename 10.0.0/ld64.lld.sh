@@ -19,8 +19,8 @@ f=
 set -e
 if [[ -n $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/ld64.lld) ]]; then
   $(rlocation clang-llvm-10.0.0-x86_64-apple-darwin/bin/ld64.lld) "$@"
-elif [[ -n $(rlocation clang-llvm-10.0.0-conda-centos-x86_64/bin/ld64.lld) ]]; then
-  $(rlocation clang-llvm-10.0.0-conda-centos-x86_64/bin/ld64.lld) "$@"
+elif [[ -n $(rlocation clang-llvm-10.0.0-x86_64-linux-rpm/bin/ld64.lld) ]]; then
+  $(rlocation clang-llvm-10.0.0-x86_64-linux-rpm/bin/ld64.lld) "$@"
 else
   echo "clang not found!" >&2
   exit 1

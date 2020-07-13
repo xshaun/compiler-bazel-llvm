@@ -24,8 +24,18 @@ def llvm_deps():
     ],
   )
 
-  #
-  # try conda-contos-x86_64 compressed by myself
+  # for centos, sles, fedora, red hat
+  http_archive(
+    name="clang-llvm-10.0.0-x86_64-linux-rpm",
+    build_file="@llvm//:llvm_linux.BUILD",
+    sha256="a7a3c2a7aff813bb10932636a6f1612e308256a5e6b5a5655068d5c5b7f80e86",
+    strip_prefix="clang+llvm-10.0.0-x86_64-linux-sles11.3", 
+    urls=[
+        "https://github.com/llvm/llvm-project/releases/download/llvmorg-10.0.0/clang+llvm-10.0.0-x86_64-linux-sles11.3.tar.xz"
+    ],
+  )
+
+  # try conda-contos-x86_64
   http_archive(
     name="clang-llvm-10.0.0-conda-centos-x86_64",
     build_file="@llvm//:llvm_linux.BUILD",
