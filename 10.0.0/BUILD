@@ -453,7 +453,7 @@ cc_library(
         ],
     }),
     copts = [
-        "-std=c++14", 
+        "-std=c++11", 
         "-fno-exceptions", 
         "-fno-rtti"
     ],
