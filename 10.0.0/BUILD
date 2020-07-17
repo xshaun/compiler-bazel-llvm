@@ -452,6 +452,11 @@ cc_library(
             "@clang-llvm-10.0.0-x86_64-linux-rpm//:libdir",
         ],
     }),
+    copts = [
+        "-std=c++14", 
+        "-fno-exceptions", 
+        "-fno-rtti"
+    ],
     linkopts = select({
         # llvm-config --ldflags
         "//:darwin": [
@@ -475,11 +480,10 @@ cc_library(
         "//conditions:default": [
             "-lrt",
             "-ldl",
-            #"-ltinfo",
+            "-ltinfo",
             "-lpthread",
             "-lm",
             "-lz",
-            "-lncurses"
         ],
     }) + [
         # clang libs
